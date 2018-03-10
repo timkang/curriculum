@@ -5,7 +5,22 @@
  */
 
 const solution = (arr)=>{
-  return 0;
+  const hmm = {};
+  let most = 0;
+  let ret = 0;
+
+  for(let i=0; i<arr.length; i++) {
+    if(arr[i] in hmm) {
+      hmm[arr[i]] += 1;
+    } else {
+      hmm[arr[i]] = 1;
+    }
+    if(hmm[arr[i]] > most) {
+      most = hmm[arr[i]];
+      ret = arr[i];
+    }
+  }
+  return ret;
 }
 
 module.exports = {

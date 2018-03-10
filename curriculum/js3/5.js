@@ -6,6 +6,9 @@
  **/
 
 const solution = (a,b)=>{
+  for(let x in a) {
+    b(x, a[x]);
+  }  
   return;
 }
 module.exports = {
